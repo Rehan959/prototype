@@ -237,3 +237,68 @@ For detailed information, see the `agents/` directory:
 - **[agents/commands.md](agents/commands.md)** - Complete command reference
 - **[agents/knowledge-base.md](agents/knowledge-base.md)** - Domain knowledge and best practices
 - **[agents/coding-standards.md](agents/coding-standards.md)** - Coding standards with examples
+
+---
+
+## realay_proto Project
+
+This repository uses Next.js 16 with React 19. Commands:
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+```
+
+### Project Structure
+
+- `app/` - Next.js App Router pages and layouts
+- `components/ui/` - shadcn/ui components
+- `lib/` - Utilities, auth client, database
+- `hooks/` - Custom React hooks
+
+### Tech Stack
+
+- Next.js 16, React 19, TypeScript
+- Tailwind CSS v4
+- better-auth for authentication
+- drizzle-orm with PostgreSQL
+- zod for validation
+- radix-ui primitives
+
+---
+
+## Opencode Skills
+
+This project has Opencode skills configured in `.opencode/skill/`:
+
+### Vercel React Best Practices
+
+Located in `.opencode/skill/vercel-react-best-practices/`, containing 40+ React/Next.js performance optimization rules.
+
+**Rule Categories by Priority:**
+
+| Priority | Category | Impact |
+|----------|----------|--------|
+| 1 | Eliminating Waterfalls | CRITICAL |
+| 2 | Bundle Size Optimization | CRITICAL |
+| 3 | Server-Side Performance | HIGH |
+| 4 | Client-Side Data Fetching | MEDIUM-HIGH |
+| 5 | Re-render Optimization | MEDIUM |
+| 6 | Rendering Performance | MEDIUM |
+| 7 | JavaScript Performance | LOW-MEDIUM |
+| 8 | Advanced Patterns | LOW |
+
+**Key Rules:**
+
+- `async-defer-await` - Move await into branches where actually used
+- `async-parallel` - Use Promise.all() for independent operations
+- `bundle-barrel-imports` - Import directly, avoid barrel files
+- `bundle-dynamic-imports` - Use next/dynamic for heavy components
+- `server-cache-react` - Use React.cache() for per-request deduplication
+- `server-parallel-fetching` - Restructure components to parallelize fetches
+- `rerender-memo` - Extract expensive work into memoized components
+- `rendering-hydration-no-flicker` - Use inline script for client-only data
+
+Reference detailed examples in `.opencode/skill/vercel-react-best-practices/rules/`.
